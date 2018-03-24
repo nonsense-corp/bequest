@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Home msg="Welcome to Your Vue.js App"/>
+    <DashboardMenu />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Home from './components/Home.vue'
+import DashboardMenu from './components/DashboardMenu.vue'
 
 export default {
   name: 'app',
   components: {
-    Home
+    Home,
+    DashboardMenu
   }
 }
 </script>
