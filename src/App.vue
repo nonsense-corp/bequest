@@ -2,7 +2,9 @@
   <div id="app">
     <div class="container">
       <Home msg="Bequest" class="header"/>
-      <DashboardMenu class="left-column"/>
+      <div v-if="checkLogIn()">
+        <DashboardMenu class="left-column"/>
+      </div>
       <div class="content">
         <router-view></router-view>
       </div>
@@ -13,12 +15,21 @@
 <script>
 import Home from './components/Home.vue'
 import DashboardMenu from './components/DashboardMenu.vue'
+import store from './store'
 
 export default {
   name: 'app',
   components: {
     Home,
     DashboardMenu
+  },
+  methods: {
+    checkLogIn: function() {
+        if (store.state.loggedIn) {
+            return 'true';
+        }
+        return 'false';
+    },
   }
 }
 </script>
