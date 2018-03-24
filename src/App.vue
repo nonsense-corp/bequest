@@ -2,9 +2,9 @@
   <div id="app">
     <div class="container">
       <Header class="header"/>
-      <div v-if="checkLogIn()">
+      <template v-if="checkLogIn()">
         <DashboardMenu class="left-column"/>
-      </div>
+      </template>
       <div class="content" v-bind:class="{ 'grid-column-start-1': !checkLogIn() }">
         <router-view></router-view>
       </div>
@@ -41,23 +41,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .container {
-  margin: 25px;
   display: grid;
-  grid-template-columns: 2fr 8fr 2fr;
-  grid-template-areas: 
-  "header header header"
-  "leftColumn content content"
-  "footer footer footer";
+  grid-template-columns: repeat(6, 1fr);
 }
 .header {
-  grid-area: header;
+  grid-column: 1 / -1;
   background-color: aliceblue;
 }
 .left-column {
-  grid-area: leftColumn;
+  grid-column: 2 / 3;
   background-color: #BA55D3;
 }
 .left-column a {
@@ -70,7 +64,7 @@ export default {
     justify-self: center;
 }
 .content {
-  grid-area: content;
+  grid-column: 3 / -2;
   background-color: palevioletred;
 }
 .grid-column-start-1 {
