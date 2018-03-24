@@ -56,7 +56,7 @@ html, body
 }
 .header {
   grid-area: header;
-  background-color: aliceblue;
+  background-color: #39DBC9;
 }
 .left-column {
   grid-area: leftColumn;
