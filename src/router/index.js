@@ -6,6 +6,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Tips from '@/components/Tips'
 import Balances from '@/components/Balances'
+import Withdraw from '@/components/Withdraw'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
             path: '/balances',
             name: 'Balances',
             component: Balances,
+        },
+        {
+            path: '/withdraw',
+            name: 'Withdraw',
+            component: Withdraw,
         },
     ]
 })
