@@ -41,6 +41,7 @@ export default {
           response => {
             // this.$router.push('/login')
             localStorage.setItem('token', response.body.data.token);
+            this.$router.push("/balances");
           },
           err => {
             console.log("An error occured", err);
