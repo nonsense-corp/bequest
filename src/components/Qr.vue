@@ -2,6 +2,12 @@
   <div>
       <h1>Qr code yo</h1>
 
+      <div v-if="loading">
+        <div class="preloader">
+          <div class="loader"></div>
+        </div>
+      </div>
+
       <div v-if="qrCode">
         <img :src="qrCode" />
         <br/>
@@ -15,11 +21,12 @@ export default {
   name: "Qr",
   data() {
     return {
-      qrCode: '',
+      qrCode: "",
+      loading: true
     };
   },
   created() {
-    console.log('hello');
+    console.log("hello");
     this.getQrCode();
   },
   methods: {
@@ -27,17 +34,21 @@ export default {
       this.$http.headers.common.Authorization = `Token ${localStorage.getItem(
         "token"
       )}`;
-      const token = "Token " + localStorage.getItem("token")
+      const token = "Token " + localStorage.getItem("token");
       this.$http
-        .get("https://bitcoin-testnet.services.rehive.io/api/1/user/", {headers: {"Authorization": token}})
+        .get("https://bitcoin-testnet.services.rehive.io/api/1/user/", {
+          headers: { Authorization: token }
+        })
         .then(
           response => {
             // this.$router.push('/login')
             console.log("response is", response);
             this.qrCode = response.body.details.qr_code;
+            this.loading = false;
           },
           err => {
             console.log("An error occured", err);
+            this.loading = false;
           }
         );
     }
