@@ -5,6 +5,7 @@ import Qr from '@/components/Qr'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Tips from '@/components/Tips'
+import Balances from '@/components/Balances'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
             path: '/tips',
             name: 'Tips',
             component: Tips
-        }
+        },
+        {
+            path: '/balances',
+            name: 'Balances',
+            component: Balances,
+        },
     ]
 })
