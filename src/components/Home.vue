@@ -26,15 +26,27 @@
       <li><a href="https://vue-loader.vuejs.org/en" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+
+    <Qr v-if="selected == 'qr'"/>
   </div>
 </template>
 
 <script>
+
+import Qr from './Qr.vue'
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
+  components: {
+    Qr
+  },
   props: {
     msg: String
-  }
+  },
+  data () {
+    return {
+      selected: 'qr',
+    }
+  },
 }
 </script>
 
