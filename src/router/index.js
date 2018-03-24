@@ -25,7 +25,7 @@ export default new Router({
             component: Login,
         },
         {
-            path: '/qr-code',
+            path: '/embeds',
             name: 'Qr',
             component: Qr,
         },
