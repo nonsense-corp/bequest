@@ -1,6 +1,7 @@
 <template>
   <div>
       <h1>Login</h1>
+        <h2>Logged in: {{ checkLogIn() }}</h2>
         <div>
             <form v-on:submit.prevent="loginFunction">
                 <label>User:
@@ -18,6 +19,8 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: "Login",
   data() {
@@ -41,12 +44,19 @@ export default {
           response => {
             // this.$router.push('/login')
             localStorage.setItem('token', response.body.data.token);
+            store.commit('changeLoggedIn', true)
             this.$router.push("/balances");
           },
           err => {
             console.log("An error occured", err);
           }
         );
+    },
+    checkLogIn: function() {
+        if (store.state.loggedIn) {
+            return 'true';
+        }
+        return 'false';
     },
   }
 };
