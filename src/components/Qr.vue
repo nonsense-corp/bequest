@@ -5,7 +5,7 @@
       <div v-if="qrCode">
         <img :src="qrCode" />
         <br/>
-        {{ qrCode }}
+        <b>Image Tag:</b> &lt;img src="{{ qrCode }}" /&gt;
       </div>
   </div>
 </template>
