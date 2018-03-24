@@ -43,11 +43,11 @@ export default {
 }
 .header {
   grid-area: header;
+  background-color: aliceblue;
 }
 .left-column {
   grid-area: leftColumn;
-  display: grid;
-  grid-template-columns: 1fr;
+  background-color: #BA55D3;
 }
 .left-column a {
     text-decoration: none;
@@ -60,6 +60,7 @@ export default {
 }
 .content {
   grid-area: content;
+  background-color: #2c3e50;
 }
 
 /* Start fancy loaders */
