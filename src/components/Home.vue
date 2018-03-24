@@ -4,6 +4,7 @@
 
     <a v-on:click="selected = 'qr'">Qr code</a>
 
+    <Register v-if="selected == 'register'"/>
     <Login v-if="selected == 'login'"/>
     <Qr v-if="selected == 'qr'"/>
   </div>
@@ -11,19 +12,21 @@
 
 <script>
 import Login from './Login.vue'
+import Register from './Register.vue'
 import Qr from './Qr.vue'
 export default {
   name: 'Home',
   components: {
     Login,
     Qr,
+    Register,
   },
   props: {
     msg: String
   },
   data () {
     return {
-      selected: 'login',
+      selected: 'register',
       email: '',
       password: '',
       login: false,
