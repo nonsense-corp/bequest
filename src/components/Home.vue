@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <ul>
+      <li><router-link to="/login">Log in</router-link></li>
+      <li><router-link to="/register">Register</router-link></li>
+    </ul>
   </div>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="container">
-      <Home msg="Bequest" class="header"/>
+      <Header class="header"/>
       <div v-if="checkLogIn()">
         <DashboardMenu class="left-column"/>
       </div>
-      <div class="content">
+      <div class="content" v-bind:class="{ 'grid-column-start-1': !checkLogIn() }">
         <router-view></router-view>
       </div>
     </div>
@@ -13,22 +13,22 @@
 </template>
 
 <script>
-import Home from './components/Home.vue'
+import Header from './components/Header.vue'
 import DashboardMenu from './components/DashboardMenu.vue'
 import store from './store'
 
 export default {
   name: 'app',
   components: {
-    Home,
+    Header,
     DashboardMenu
   },
   methods: {
     checkLogIn: function() {
         if (store.state.loggedIn) {
-            return 'true';
+            return true;
         }
-        return 'false';
+        return false;
     },
   }
 }
@@ -71,7 +71,10 @@ export default {
 }
 .content {
   grid-area: content;
-  background-color: #2c3e50;
+  background-color: palevioletred;
+}
+.grid-column-start-1 {
+  grid-column-start: 1;
 }
 
 /* Start fancy loaders */
