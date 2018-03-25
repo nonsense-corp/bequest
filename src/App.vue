@@ -59,12 +59,11 @@ html, body
 }
 .left-column a {
     text-decoration: none;
-    color: #F57F17;
-    font-style: italic;
     transition: all 0.3s;
+    text-align: center;
     /* Need this to prevent entire thing from being clickable! */
-    align-self: center;
-    justify-self: center;
+    /* align-self: center;
+    justify-self: center; */
 }
 .content {
   grid-column: 3 / -2;
@@ -75,14 +74,18 @@ html, body
 .grid-column-start-1 {
   grid-column-start: 1;
 }
+.left-column .mui-btn+.mui-btn {
+    margin-left: 0;
+}
 
 /* Start fancy loaders */
 .preloader {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    margin-top: 150px;
 }
 .loader {
     display: block;
@@ -94,7 +97,7 @@ html, body
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #9370DB;
+    border-top-color: #64FFDA;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
@@ -107,7 +110,7 @@ html, body
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #BA55D3;
+    border-top-color: #00BFA5;
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
@@ -120,9 +123,12 @@ html, body
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #FF00FF;
+    border-top-color: #A7FFEB;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
+}
+.menu button {
+  width: 100%;
 }
 @-webkit-keyframes spin {
     0%   {

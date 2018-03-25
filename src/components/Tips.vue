@@ -2,8 +2,16 @@
   <div>
       <h1>Tips</h1>
 
+      <div v-if="loading">
+        <div class="preloader">
+          <div class="loader"></div>
+        </div>
+      </div>
+
       <div v-for="transaction in transactions">
-          <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}} {{transaction.metadata.type}}</a>
+          <template v-if="transaction.metadata && transaction.metadata.hash">
+            <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}} {{transaction.metadata.type}}</a>
+          </template>
           {{transaction.currency.symbol}}{{ transaction.balance / (10 ** transaction.currency.divisibility)}}
       </div>
   </div>
@@ -15,6 +23,7 @@ export default {
   data() {
     return {
         transactions: [],
+        loading: true
     };
   },
   created() {
@@ -29,9 +38,11 @@ export default {
           response => {
             console.log("response is", response)
             this.transactions = response.body.data.results;
+            this.loading = false;
           },
           err => {
             console.log("An error occured", err);
+            this.loading = false;
           }
         );
     }

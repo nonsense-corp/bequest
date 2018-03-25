@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Qr code yo</h1>
+      <h1>Embed codes</h1>
 
       <div v-if="loading">
         <div class="preloader">

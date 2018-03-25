@@ -2,6 +2,12 @@
   <div>
       <h1>Qr code yo</h1>
 
+        <div v-if="loading">
+        <div class="preloader">
+          <div class="loader"></div>
+        </div>
+      </div>
+
       <div v-for="currency in currencies">
         {{currency.currency.symbol}}{{ currency.available_balance / (10 ** currency.currency.divisibility)}}
       </div>
@@ -14,6 +20,7 @@ export default {
   data() {
     return {
       currencies: [],
+      loading: true
     };
   },
   created() {
@@ -33,9 +40,11 @@ export default {
             // this.$router.push('/login')
             console.log("response is", response);
             this.currencies = response.body.data.results[0].currencies;
+            this.loading = false;
           },
           err => {
             console.log("An error occured", err);
+            this.loading = false;
           }
         );
     }

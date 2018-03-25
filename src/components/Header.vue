@@ -16,5 +16,7 @@ export default {
 <style scoped>
 h1 {
   margin: 0 0 0;
+  float: left;
+  padding: 10px 30px;
 }
 </style>
