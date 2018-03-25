@@ -12,7 +12,8 @@
           <template v-if="transaction.metadata && transaction.metadata.hash">
             <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}} {{transaction.metadata.type}}</a>
           </template>
-          {{transaction.currency.symbol}}{{ transaction.balance / (10 ** transaction.currency.divisibility)}}
+          {{transaction.currency.symbol}}{{ transaction.amount / (10 ** transaction.currency.divisibility)}}
+          {{transaction.status}}
       </div>
   </div>
 </template>

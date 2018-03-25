@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>Withdraw Bitcoin</h1>
-        <div>
+        <div v-if="!complete_bitcoin">
             <form v-on:submit.prevent="sendBitcoin" class="mui-form">
                 <label>
                     Bitcoin Address:
@@ -19,6 +19,12 @@
                 <input type='submit' value='Withdraw' class="mui-btn mui-btn--raised"/>
             </form>
         </div>
+        <div v-if="complete_bitcoin">
+            Successful Withdrawel
+        </div>
+        <div v-if="bitcoin_error">
+            An error occured: {{bitcoin_error_msg}}
+        </div>
   </div>
 </template>
 
@@ -30,7 +36,10 @@ export default {
         withdraw_bitcoin: {
             to_reference: "",
             amount: "",
-        }
+        },
+        complete_bitcoin: false,
+        bitcoin_error: false,
+        bitcoin_error_msg: ""
     };
   },
   methods: {
@@ -49,10 +58,12 @@ export default {
           response => {
             // this.$router.push('/login')
             console.log("response is", response);
-            this.qrCode = response.body.details.qr_code;
+            this.complete_bitcoin = true;
           },
           err => {
             console.log("An error occured", err);
+            this.bitcoin_error = err;
+            this.bitcoin_error = true;
           }
         );
     }
