@@ -8,11 +8,15 @@ export default new Vuex.Store({
     plugins: [createPersistedState()],
     state: {
       loggedIn: false,
+      user: {},
     },
     mutations: {
       changeLoggedIn (state, isLoggedIn) {
         state.loggedIn = isLoggedIn
       },
+      setUserDetails (state, user) {
+        state.user = user;
+      }
     }
 })
   

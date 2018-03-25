@@ -49,6 +49,7 @@ export default {
             // this.$router.push('/login')
             localStorage.setItem("token", response.body.data.token);
             store.commit("changeLoggedIn", true);
+            store.commit("setUserDetails", { email: this.login.user });
             this.$router.push("/balances");
           },
           err => {
