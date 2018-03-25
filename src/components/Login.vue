@@ -3,23 +3,28 @@
       <h1>Login</h1>
         <h2>Logged in: {{ checkLogIn() }}</h2>
         <div>
-            <form v-on:submit.prevent="loginFunction">
-                <label>User:
-                <input type='text' v-model="login.user"/>
+            <form v-on:submit.prevent="loginFunction" class="mui-form">
+                <label>
+                  User:
+                  <div class="mui-textfield">
+                    <input type='text' v-model="login.user"/>
+                  </div>
+                </label>
+                <label>
+                  Password: 
+                  <div class="mui-textfield">
+                    <input type='password' v-model="login.password"/>
+                  </div>
                 </label>
                 <br/>
-                <label>Password: 
-                <input type='password' v-model="login.password"/>
-                </label>
-                <br/>
-                <input type='submit' value='Login' class="light-blue darken-4 waves-effect waves-light btn"/>
+                <input type='submit' value='Login' class="mui-btn mui-btn--raised mui-btn--primary"/>
             </form>
       </div>
   </div>
 </template>
 
 <script>
-import store from '../store'
+import store from "../store";
 
 export default {
   name: "Login",
@@ -43,8 +48,8 @@ export default {
         .then(
           response => {
             // this.$router.push('/login')
-            localStorage.setItem('token', response.body.data.token);
-            store.commit('changeLoggedIn', true)
+            localStorage.setItem("token", response.body.data.token);
+            store.commit("changeLoggedIn", true);
             this.$router.push("/balances");
           },
           err => {
@@ -53,11 +58,11 @@ export default {
         );
     },
     checkLogIn: function() {
-        if (store.state.loggedIn) {
-            return 'true';
-        }
-        return 'false';
-    },
+      if (store.state.loggedIn) {
+        return "true";
+      }
+      return "false";
+    }
   }
 };
 </script>

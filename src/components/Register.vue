@@ -2,24 +2,36 @@
   <div>
       <h1>Register</h1>
       <div>
-        <form v-on:submit.prevent="registerUser">
-            <label>First Name:
-            <input type='text' v-model="register.first_name"/>
+        <form v-on:submit.prevent="registerUser" class="mui-form">
+            <label>
+              First Name:
+              <div class="mui-textfield">
+                <input type='text' v-model="register.first_name"/>
+              </div>
+            </label>
+
+            <label>
+              Last Name: 
+              <div class="mui-textfield">
+                <input type='text' v-model="register.last_name"/>
+              </div>
+            </label>
+
+            <label>
+              Email address:
+              <div class="mui-textfield">
+                <input type='text' v-model="register.email"/>
+              </div>
+            </label>
+
+            <label>
+              Password:
+              <div class="mui-textfield">
+                <input type='password' v-model="register.password"/>
+              </div>
             </label>
             <br/>
-            <label>Last Name: 
-            <input type='text' v-model="register.last_name"/>
-            </label>
-            <br/>
-            <label>Email address:
-            <input type='text' v-model="register.email"/>
-            </label>
-            <br/>
-            <label>Password:
-            <input type='password' v-model="register.password"/>
-            </label>
-            <br/>
-            <input type='submit' value='Register' class="light-blue darken-4 waves-effect waves-light btn"/>
+            <input type='submit' value='Register' class="mui-btn mui-btn--raised mui-btn--primary"/>
         </form>
       </div>
   </div>
