@@ -1,10 +1,8 @@
 <template>
   <div>
-      <ul>
-        <li><router-link class="light-blue darken-4 waves-effect waves-light btn" to="/balances">Balances</router-link></li>
-        <li><router-link class="light-blue darken-4 waves-effect waves-light btn" to="/tips">Tips</router-link></li>
-        <li><router-link class="light-blue darken-4 waves-effect waves-light btn" to="/embeds">Embeds</router-link></li>
-        <li><router-link class="light-blue darken-4 waves-effect waves-light btn" to="/withdraw">Withdraw</router-link></li>
-      </ul>
+      <div><router-link to="/balances">Balances</router-link></div>
+      <div><router-link to="/tips">Tips</router-link></div>
+      <div><router-link to="/embeds">Embeds</router-link></div>
+      <div><router-link to="/withdraw">Withdraw</router-link></div>
   </div>
 </template>

@@ -2,16 +2,21 @@
   <div>
       <h1>Withdraw Bitcoin</h1>
         <div>
-            <form v-on:submit.prevent="sendBitcoin">
-                <label>Bitcoin Address:
-                <input type='text' v-model="withdraw_bitcoin.to_reference"/>
+            <form v-on:submit.prevent="sendBitcoin" class="mui-form">
+                <label>
+                    Bitcoin Address:
+                    <div class="mui-textfield">
+                        <input type='text' v-model="withdraw_bitcoin.to_reference"/>
+                    </div>
                 </label>
                 <br/>
                 <label>Amount: 
-                <input type='number' v-model="withdraw_bitcoin.amount"/>
+                    <div class="mui-textfield">
+                        <input type='number' v-model="withdraw_bitcoin.amount"/>
+                    </div>
                 </label>
                 <br/>
-                <input type='submit' value='Withdraw' class="light-blue darken-4 waves-effect waves-light btn"/>
+                <input type='submit' value='Withdraw' class="mui-btn mui-btn--raised"/>
             </form>
         </div>
   </div>

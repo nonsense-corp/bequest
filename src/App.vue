@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="container" >
       <Header class="header"/>
-      <template v-if="checkLogIn()">
-        <DashboardMenu class="left-column"/>
-      </template>
-      <div class="content" v-bind:class="{ 'grid-column-start-1': !checkLogIn() }">
-        <router-view></router-view>
+        <template v-if="checkLogIn()">
+          <DashboardMenu class="left-column"/>
+        </template>
+        <div class="content" v-bind:class="{ 'grid-column-start-1': !checkLogIn()}">
+          <router-view></router-view>
+        </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -56,7 +56,6 @@ html, body
 }
 .left-column {
   grid-column: 2 / 3;
-  background-color: #BA55D3;
 }
 .left-column a {
     text-decoration: none;
@@ -69,7 +68,9 @@ html, body
 }
 .content {
   grid-column: 3 / -2;
-  background-color: palevioletred;
+}
+.page {
+  box-shadow: 0 0 1px #000;
 }
 .grid-column-start-1 {
   grid-column-start: 1;
