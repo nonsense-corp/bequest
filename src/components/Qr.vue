@@ -8,10 +8,13 @@
         </div>
       </div>
 
-      <div v-if="qrCode">
-        <img :src="qrCode" />
-        <br/>
-        <b>Image Tag:</b> &lt;img src="{{ qrCode }}" /&gt;
+      <div v-if="!loading">  
+        <h2>Bitcoin</h2>
+        <div v-if="qrCode">
+          <img :src="qrCode" />
+          <br/>
+          <b>Image Tag:</b> &lt;img src="{{ qrCode }}" /&gt;
+        </div>
       </div>
   </div>
 </template>

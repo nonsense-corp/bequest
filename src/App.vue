@@ -127,8 +127,21 @@ html, body
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
-.menu button {
+.menu {
+  margin-right: 30px;
+}
+.menu a {
   width: 100%;
+  padding: 0px;
+}
+.currency_balance {
+  border: 1px solid #C5CAE9;
+  padding: 15px;
+  width: 33%;
+  margin: 0 auto;
+}
+.currency_balance h1 {
+  margin-top: 0px;
 }
 @-webkit-keyframes spin {
     0%   {

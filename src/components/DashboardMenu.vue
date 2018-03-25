@@ -1,8 +1,8 @@
 <template>
   <div class="menu">
-      <button class="mui-btn mui-btn--flat"><router-link to="/balances">Balances</router-link></button>
-      <button class="mui-btn mui-btn--flat"><router-link to="/tips">Tips</router-link></button>
-      <button class="mui-btn mui-btn--flat"><router-link to="/embeds">Embeds</router-link></button>
-      <button class="mui-btn mui-btn--flat"><router-link to="/withdraw">Withdraw</router-link></button>
+      <router-link to="/balances" class="mui-btn mui-btn--flat">Balances</router-link>
+      <router-link to="/tips" class="mui-btn mui-btn--flat">Tips</router-link>
+      <router-link to="/embeds" class="mui-btn mui-btn--flat">Embeds</router-link>
+      <router-link to="/withdraw" class="mui-btn mui-btn--flat">Withdraw</router-link>
   </div>
 </template>

@@ -18,5 +18,6 @@ h1 {
   margin: 0 0 0;
   float: left;
   padding: 10px 30px;
+  color: #E0F7FA;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Qr code yo</h1>
+      <h1>Currency Balances</h1>
 
         <div v-if="loading">
         <div class="preloader">
@@ -9,7 +9,9 @@
       </div>
 
       <div v-for="currency in currencies">
-        {{currency.currency.symbol}}{{ currency.available_balance / (10 ** currency.currency.divisibility)}}
+        <div class="currency_balance">
+            <h1>{{currency.currency.symbol}}</h1>{{ currency.available_balance / (10 ** currency.currency.divisibility)}}
+        </div>
       </div>
   </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <div>
       <h1>Login</h1>
-        <h2>Logged in: {{ checkLogIn() }}</h2>
         <div>
             <form v-on:submit.prevent="loginFunction" class="mui-form">
                 <label>

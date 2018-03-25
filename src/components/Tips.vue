@@ -8,13 +8,20 @@
         </div>
       </div>
 
-      <div v-for="transaction in transactions">
-          <template v-if="transaction.metadata && transaction.metadata.hash">
-            <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}} {{transaction.metadata.type}}</a>
-          </template>
-          {{transaction.currency.symbol}}{{ transaction.amount / (10 ** transaction.currency.divisibility)}}
-          {{transaction.status}}
-      </div>
+      <table class="mui-table">
+          <tbody>
+          <div v-for="transaction in transactions">
+                <tr>
+                  <td>{{transaction.currency.symbol}}</td>
+                  <td>{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</td>
+                  <td><template v-if="transaction.metadata && transaction.metadata.hash">
+                <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}}</a>
+              </template></td>
+                  <td>{{transaction.status}}</td>
+                </tr> 
+          </div>
+        </tbody>
+      </table>
   </div>
 </template>
 
