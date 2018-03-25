@@ -5,7 +5,7 @@
         <template v-if="checkLogIn()">
           <DashboardMenu class="left-column"/>
         </template>
-        <div class="content" v-bind:class="{ 'grid-column-start-1': !checkLogIn()}">
+        <div class="content" v-bind:class="{ 'grid-column-start-2': !checkLogIn()}">
           <router-view></router-view>
         </div>
       </div>
@@ -71,8 +71,8 @@ html, body
 .page {
   box-shadow: 0 0 1px #000;
 }
-.grid-column-start-1 {
-  grid-column-start: 1;
+.grid-column-start-2 {
+  grid-column-start: 2;
 }
 .left-column .mui-btn+.mui-btn {
     margin-left: 0;
