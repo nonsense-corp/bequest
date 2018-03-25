@@ -25,6 +25,13 @@
             </label>
 
             <label>
+              Username:
+              <div class="mui-textfield">
+                <input type='text' v-model="stellar.username"/>
+              </div>
+            </label>
+
+            <label>
               Password:
               <div class="mui-textfield">
                 <input type='password' v-model="register.password"/>
@@ -38,6 +45,8 @@
 </template>
 
 <script>
+import store from "../store";
+
 export default {
   name: "Register",
   data() {
@@ -47,6 +56,9 @@ export default {
         last_name: "",
         email: "",
         password: ""
+      },
+      stellar: {
+        username: "",
       }
     };
   },
@@ -69,12 +81,32 @@ export default {
         )
         .then(
           response => {
-            this.$router.push("/login");
+            localStorage.setItem("token", response.body.data.token);
+            store.commit("changeLoggedIn", true);
+            // this.$router.push("/balances");
+            const payload_1 = {
+              username: this.stellar.username,
+             };
+            const token = "Token " + localStorage.getItem("token");
+            this.$http
+                .post(
+                  "https://stellar.services.rehive.io/api/1/user/username/set/",
+                  JSON.stringify(payload_1),
+                  { headers: { Authorization: token }}
+                )
+                .then(
+                  response => {
+                    this.$router.push("/balances");
+                  },
+                  err => {
+                    console.log("An error occured", err);
+                  }
+                );
           },
           err => {
             console.log("An error occured", err);
           }
-        );
+        )
     }
   }
 };

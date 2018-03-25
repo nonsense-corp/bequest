@@ -139,6 +139,7 @@ html, body
   padding: 15px;
   width: 33%;
   margin: 0 auto;
+  margin-bottom: 15px;
 }
 .currency_balance h1 {
   margin-top: 0px;
