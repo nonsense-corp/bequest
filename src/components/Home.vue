@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <router-link to="/login" class="mui-btn mui-btn--primary">Log in</router-link>
+    <router-link to="/login" class="mui-btn mui-btn--primary">Log in</router-link> 
+    <br/>
     <router-link to="/register" class="mui-btn mui-btn--primary">Register</router-link>
   </div>
 </template>
