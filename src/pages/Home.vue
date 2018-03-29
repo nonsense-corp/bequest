@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Login from './Login.vue'
-import Register from './Register.vue'
-import Qr from './Qr.vue'
+import Login from '../pages/Login.vue'
+import Register from '../pages/Register.vue'
+import Qr from '../pages/Qr.vue'
 export default {
   name: 'Home',
   props: {

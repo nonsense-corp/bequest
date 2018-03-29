@@ -6,6 +6,9 @@ import Vuex from 'vuex'
 import store from './store'
 import router from './router'
 
+// Styles
+import './styles/main.scss'
+
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(Vuex)

@@ -1,13 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
 import store from "../store";
-import Home from "@/components/Home";
-import Qr from "@/components/Qr";
-import Register from "@/components/Register";
-import Login from "@/components/Login";
-import Tips from "@/components/Tips";
-import Balances from "@/components/Balances";
-import Withdraw from "@/components/Withdraw";
+import Home from "@/pages/Home";
+import Qr from "@/pages/Qr";
+import Register from "@/pages/Register";
+import Login from "@/pages/Login";
+import Tips from "@/pages/Tips";
+import Balances from "@/pages/Balances";
+import Withdraw from "@/pages/Withdraw";
 
 Vue.use(Router);
 
