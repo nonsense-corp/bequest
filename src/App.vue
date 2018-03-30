@@ -5,7 +5,7 @@
       <template v-if="checkLogIn()">
         <DashboardMenu class="grid__sidebar"/>
       </template>
-      <div class="content" v-bind:class="{ 'grid-column-start-2': !checkLogIn()}">
+      <div class="grid__content" v-bind:class="{ 'grid-column-start-2': !checkLogIn()}">
         <router-view></router-view>
       </div>
     </div>
@@ -36,9 +36,6 @@ export default {
 
 <style>
 
-.content {
-  grid-column: 3 / -2;
-}
 .page {
   box-shadow: 0 0 1px #000;
 }

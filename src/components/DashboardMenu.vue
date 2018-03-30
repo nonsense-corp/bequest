@@ -1,10 +1,10 @@
 <template>
-  <div class="menu">
-      <router-link to="/balances" class="mui-btn mui-btn--flat grid__sidebar_link">Balances</router-link>
-      <router-link to="/tips" class="mui-btn mui-btn--flat grid__sidebar_link">Tips</router-link>
-      <router-link to="/embeds" class="mui-btn mui-btn--flat grid__sidebar_link">Embeds</router-link>
-      <router-link to="/withdraw" class="mui-btn mui-btn--flat grid__sidebar_link">Withdraw</router-link>
-      <a class="mui-btn mui-btn--flat" v-on:click="logout()">Log out</a>
+  <div>
+      <router-link to="/balances" class="grid__sidebar_link">Balances</router-link>
+      <router-link to="/tips" class="grid__sidebar_link">Tips</router-link>
+      <router-link to="/embeds" class="grid__sidebar_link">Embeds</router-link>
+      <router-link to="/withdraw" class="grid__sidebar_link">Withdraw</router-link>
+      <a v-on:click="logout()">Log out</a>
   </div>
 </template>
 
