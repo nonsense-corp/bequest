@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Bequest</h1>
+      <h1 class="logo">Bequest</h1>
   </div>
 </template>
 
@@ -9,12 +9,3 @@ export default {
   name: 'Header',
 }
 </script>
-
-<style scoped>
-h1 {
-  margin: 0 0 0;
-  float: left;
-  padding: 10px 30px;
-  color: #E0F7FA;
-}
-</style>

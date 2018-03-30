@@ -1,9 +1,9 @@
 <template>
   <div class="menu">
-      <router-link to="/balances" class="mui-btn mui-btn--flat">Balances</router-link>
-      <router-link to="/tips" class="mui-btn mui-btn--flat">Tips</router-link>
-      <router-link to="/embeds" class="mui-btn mui-btn--flat">Embeds</router-link>
-      <router-link to="/withdraw" class="mui-btn mui-btn--flat">Withdraw</router-link>
+      <router-link to="/balances" class="mui-btn mui-btn--flat grid__sidebar_link">Balances</router-link>
+      <router-link to="/tips" class="mui-btn mui-btn--flat grid__sidebar_link">Tips</router-link>
+      <router-link to="/embeds" class="mui-btn mui-btn--flat grid__sidebar_link">Embeds</router-link>
+      <router-link to="/withdraw" class="mui-btn mui-btn--flat grid__sidebar_link">Withdraw</router-link>
       <a class="mui-btn mui-btn--flat" v-on:click="logout()">Log out</a>
   </div>
 </template>

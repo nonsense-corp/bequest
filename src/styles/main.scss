@@ -1,2 +1,30 @@
+@import 'functions';
 @import 'variables';
+@import 'grid';
 @import 'sidebar';
+@import 'loader';
+
+html, body
+{
+    margin: 0px; padding: 0px
+}
+
+#app {
+    font-family: $hind;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.logo {
+    font-family: $yellowtail;
+    font-size: 72px;
+    text-shadow: 0px 1px 1px #305457;
+
+    // TODO: Unnessary crap
+    margin: 0 0 0;
+    float: left;
+    padding: 10px 30px;
+    color: #E0F7FA;
+}

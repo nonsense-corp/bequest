@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    &__header {
+        grid-column: 1 / -1; // Full width
+        background-color: #39DBC9;
+    }
+
+    &__sidebar {
+        grid-column: 2 / 3;
+    }
+
+    &__sidebar-link {
+        text-decoration: none;
+        transition: all 0.3s;
+        text-align: center;
+        /* Need this to prevent entire thing from being clickable! */
+        /* align-self: center;
+        justify-self: center; */
+    }
+}
