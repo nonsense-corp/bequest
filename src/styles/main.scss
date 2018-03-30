@@ -2,7 +2,9 @@
 @import 'variables';
 @import 'grid';
 @import 'sidebar';
+@import 'inputs';
 @import 'loader';
+@import 'content';
 
 html, body
 {
@@ -18,6 +20,7 @@ html, body
 .logo {
     font-family: $yellowtail;
     font-size: 72px;
+    font-weight: normal;
     text-shadow: 0px 1px 1px #305457;
     color: $primary-color;
     line-height: initial;
@@ -25,4 +28,5 @@ html, body
     // The font adds to much white space, this corrects it so it's centered properly >_>
     margin-left: -15px;
     margin-top: 0;
+    margin-bottom: 0;
 }

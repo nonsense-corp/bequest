@@ -53,14 +53,4 @@ export default {
   width: 100%;
   padding: 0px;
 }
-.currency_balance {
-  border: 1px solid #C5CAE9;
-  padding: 15px;
-  width: 33%;
-  margin: 0 auto;
-  margin-bottom: 15px;
-}
-.currency_balance h1 {
-  margin-top: 0px;
-}
 </style>

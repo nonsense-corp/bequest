@@ -10,7 +10,7 @@
 
       <table class="mui-table">
           <tbody>
-          <div v-for="transaction in transactions">
+          <div v-for="(transaction, key, index) in transactions" :key="index">
                 <tr>
                   <td>{{transaction.currency.symbol}}</td>
                   <td>{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</td>
