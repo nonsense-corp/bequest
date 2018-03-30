@@ -21,10 +21,6 @@ html, body
     font-family: $yellowtail;
     font-size: 72px;
     text-shadow: 0px 1px 1px #305457;
-
-    // TODO: Unnessary crap
-    margin: 0 0 0;
-    float: left;
-    padding: 10px 30px;
-    color: #E0F7FA;
+    color: $primary-color;
+    line-height: initial;
 }

@@ -1,0 +1,24 @@
+.sidebar {
+    &__profile {
+        display: grid;
+        justify-content: center;
+        &--img {
+            background-size: cover;
+            background-position: center;
+            border: 3px solid $primary-color;
+            border-radius: 50%;
+            height: 160px;
+            margin-top: 45px;
+            width: 160px;
+        }
+    }
+
+    &__profile-name {
+        color: $primary-color;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: $hind;
+        margin-top: 15px;
+        margin-bottom: 45px;
+    }
+}

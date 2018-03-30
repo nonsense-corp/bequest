@@ -17,19 +17,29 @@
     }
 
     &__sidebar-link {
+        color: $secondary-color;
+        display: grid;
+        align-items: center;
+        height: 40px;
         text-decoration: none;
+        font-size: 18px;
+        letter-spacing: 0.1em;
         transition: all 0.3s;
         text-align: center;
-        /* Need this to prevent entire thing from being clickable! */
-        /* align-self: center;
-        justify-self: center; */
+        text-transform: uppercase;
+        font-family: $hind;
+
+        &.router-link-active {
+            color: $background-color;
+            background-color: $primary-color;
+        }
     }
     // END Sidebar
 
     // START Content
 
     &__content {
-        grid-column: 2 / -1;
+        grid-column: 3 / -1;
         grid-row-start: 2;
     }
 
