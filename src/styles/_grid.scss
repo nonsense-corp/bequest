@@ -3,13 +3,17 @@
     grid-template-columns:  minmax(auto, 150px) minmax(auto, 150px) 1fr 1fr 1fr 1fr;
 
     &__header {
+        border-bottom: 1px solid rgba(117, 185, 190, 0.2);
         grid-column: 3 / -1;
-        background-color: #39DBC9;
+        // Magic!
+        padding: 33px;
+        text-align: right;
     }
 
     // START Sidebar
     &__sidebar {
         background-color: $background-color;
+        border-right: 5px solid #B9F0F0;
         grid-column: 1 / 3;
         grid-row-start: 1;
         grid-row-end: span 6; // Make this not care about the grid so we can use height 100vh
