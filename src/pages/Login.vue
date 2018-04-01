@@ -45,10 +45,9 @@ export default {
         )
         .then(
           response => {
-            // this.$router.push('/login')
             localStorage.setItem("token", response.body.data.token);
             store.commit("changeLoggedIn", true);
-            store.commit("setUserDetails", { email: this.login.user });
+            store.commit("setUserDetails", response.body.data);
             this.$router.push("/balances");
           },
           err => {

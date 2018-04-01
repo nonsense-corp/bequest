@@ -11,7 +11,7 @@
         </div>
 
         <p class="sidebar__profile-name">
-          Connor Macdougall
+          {{ full_name }} 
         </p>
       </div>
       <!-- Links -->
@@ -23,12 +23,20 @@
 </template>
 
 <script>
+import store from "../store";
+
 export default {
   name: "DashboardMenu",
   data() {
+    console.log(store.state.user)
     return {
       profileUrl: '/img/tumblr_na99e5A2bY1ti25hmo1_1280.60f478f5.jpg',
     }
   },
+  computed: {
+    full_name () {
+      return this.$store.state.user.user.first_name + ' ' + this.$store.state.user.user.last_name
+    }
+  }
 }
 </script>

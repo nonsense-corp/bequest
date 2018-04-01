@@ -83,7 +83,7 @@ export default {
           response => {
             localStorage.setItem("token", response.body.data.token);
             store.commit("changeLoggedIn", true);
-            // this.$router.push("/balances");
+            store.commit("setUserDetails", response.body.data);
             const payload_1 = {
               username: this.stellar.username,
              };
