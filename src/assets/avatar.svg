@@ -1,0 +1,40 @@
+
+<svg width="132" height="132" viewBox="0 0 132 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Avatar</title>
+<desc>Default user avatar</desc>
+<g id="Canvas" transform="translate(649 481)">
+<g id="Group">
+<g id="Group 2">
+<mask id="mask0_alpha" mask-type="alpha">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(-649 -481)" fill="#C4C4C4"/>
+<mask id="mask1_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-649 -481)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-649 -481)" fill="#FFFFFF"/>
+</g>
+</g>
+</mask>
+<g id="Group" mask="url(#mask0_alpha)">
+<g id="Ellipse 3">
+<use xlink:href="#path2_fill" transform="translate(-649 -481)" fill="#75B9BE"/>
+</g>
+<g id="Ellipse 2">
+<use xlink:href="#path3_fill" transform="translate(-609.4 -460.692)" fill="#B9F0F0"/>
+</g>
+<g id="Polygon">
+<use xlink:href="#path4_fill" transform="translate(-639.862 -439.369)" fill="#B9F0F0"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 132 66C 132 102.451 102.451 132 66 132C 29.5492 132 0 102.451 0 66C 0 29.5492 29.5492 0 66 0C 102.451 0 132 29.5492 132 66Z"/>
+<path id="path1_stroke_2x" d="M 129 66C 129 100.794 100.794 129 66 129L 66 135C 104.108 135 135 104.108 135 66L 129 66ZM 66 129C 31.2061 129 3 100.794 3 66L -3 66C -3 104.108 27.8924 135 66 135L 66 129ZM 3 66C 3 31.2061 31.2061 3 66 3L 66 -3C 27.8924 -3 -3 27.8924 -3 66L 3 66ZM 66 3C 100.794 3 129 31.2061 129 66L 135 66C 135 27.8924 104.108 -3 66 -3L 66 3Z"/>
+<path id="path2_fill" d="M 132 66C 132 102.451 102.451 132 66 132C 29.5492 132 0 102.451 0 66C 0 29.5492 29.5492 0 66 0C 102.451 0 132 29.5492 132 66Z"/>
+<path id="path3_fill" d="M 54.8308 28.9385C 54.8308 44.9207 42.5565 57.8769 27.4154 57.8769C 12.2743 57.8769 0 44.9207 0 28.9385C 0 12.9562 12.2743 0 27.4154 0C 42.5565 0 54.8308 12.9562 54.8308 28.9385Z"/>
+<path id="path4_fill" d="M 40.044 31.9898C 47.1648 18.4448 66.5583 18.4449 73.6791 31.9898L 91.4684 65.828C 98.1198 78.4799 88.9446 93.6692 74.6508 93.6692L 39.0722 93.6692C 24.7785 93.6692 15.6033 78.4799 22.2547 65.8279L 40.044 31.9898Z"/>
+</defs>
+</svg>

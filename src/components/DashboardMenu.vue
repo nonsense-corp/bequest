@@ -11,7 +11,7 @@
         </div>
 
         <p class="sidebar__profile-name">
-          {{ full_name }} 
+          {{ full_name }}
         </p>
       </div>
       <!-- Links -->
@@ -24,13 +24,13 @@
 
 <script>
 import store from "../store";
+import defaultImage from "@/assets/avatar.svg";
 
 export default {
   name: "DashboardMenu",
   data() {
-    console.log(store.state.user)
     return {
-      profileUrl: '/img/tumblr_na99e5A2bY1ti25hmo1_1280.60f478f5.jpg',
+      profileUrl: defaultImage,
     }
   },
   computed: {
