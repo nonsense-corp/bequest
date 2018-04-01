@@ -36,21 +36,4 @@ export default {
 
 <style>
 
-.page {
-  box-shadow: 0 0 1px #000;
-}
-.grid-column-start-2 {
-  grid-column-start: 2;
-}
-.left-column .mui-btn+.mui-btn {
-    margin-left: 0;
-}
-
-.menu {
-  margin-right: 30px;
-}
-.menu a {
-  width: 100%;
-  padding: 0px;
-}
 </style>
