@@ -20,6 +20,9 @@
 </template>
 
 <script>
+
+import store from "../store";
+
 export default {
   name: "Qr",
   data() {
@@ -48,6 +51,11 @@ export default {
           },
           err => {
             console.log("An error occured", err);
+            // Unauthorized.
+            if (err.status == 401) {
+              store.commit('logout');
+              this.$router.push("/login");
+            }
             this.loading = false;
           }
         );

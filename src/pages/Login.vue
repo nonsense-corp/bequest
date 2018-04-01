@@ -2,21 +2,20 @@
   <div>
       <h1>Login</h1>
         <div>
-            <form v-on:submit.prevent="loginFunction" class="mui-form">
-                <label>
-                  User:
-                  <div class="mui-textfield">
-                    <input type='text' v-model="login.user"/>
-                  </div>
-                </label>
-                <label>
-                  Password: 
-                  <div class="mui-textfield">
-                    <input type='password' v-model="login.password"/>
-                  </div>
-                </label>
-                <br/>
-                <input type='submit' value='Login' class="mui-btn mui-btn--raised mui-btn--primary"/>
+            <form v-on:submit.prevent="loginFunction">
+                <div class="group">      
+                  <input type="text" required v-model="login.user">
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>User:</label>
+                </div>
+                <div class="group">      
+                  <input type='password' required v-model="login.password">
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Password:</label>
+                </div>
+                <input type='submit' value='Login'/>
             </form>
       </div>
   </div>

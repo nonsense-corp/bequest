@@ -10,9 +10,7 @@ export default {
   name: 'Header',
   methods: {
     logout: function() {
-      localStorage.clear();
-      store.commit("changeLoggedIn", false);
-      store.commit("setUserDetails", { });
+      store.commit('logout');
       this.$router.push("/login");
     }
   }
