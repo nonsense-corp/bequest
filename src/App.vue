@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="grid">
-      <Header class="grid__header"/>
+      <Header class="grid__header" v-if="checkLogIn()"/>
       <template v-if="checkLogIn()">
         <DashboardMenu class="grid__sidebar"/>
       </template>
-      <div class="grid__content" v-bind:class="{ 'grid-column-start-2': !checkLogIn()}">
+      <div class="grid__content" v-bind:class="{ 'login': !checkLogIn()}">
         <router-view></router-view>
       </div>
     </div>
