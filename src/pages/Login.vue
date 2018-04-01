@@ -23,6 +23,7 @@
 
 <script>
 import store from "../store";
+import globals from "../globals";
 
 export default {
   name: "Login",
@@ -40,14 +41,14 @@ export default {
       event.preventDefault();
       this.$http
         .post(
-          "https://api.rehive.com/3/auth/login/",
+          globals.REHIVE_API.BASE_URL + globals.REHIVE_API.URLS.LOGIN,
           JSON.stringify(this.login)
         )
         .then(
           response => {
             localStorage.setItem("token", response.body.data.token);
             store.commit("changeLoggedIn", true);
-            store.commit("setUserDetails", response.body.data);
+            store.commit("setUserDetails", response.body.data.user);
             this.$router.push("/balances");
           },
           err => {
