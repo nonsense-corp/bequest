@@ -22,7 +22,7 @@ export default new Vuex.Store({
         // Always remove token from user object
         const clean_user_data = Object.assign({}, user);
         delete clean_user_data['token']
-        state.user = clean_user_data.user;
+        state.user = clean_user_data;
       },
       logout (state) {
         state.user = {};

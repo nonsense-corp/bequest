@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import globals from "../globals";
+
 export default {
   name: "Qr",
   data() {
@@ -50,7 +52,7 @@ export default {
       )}`;
       const token = "Token " + localStorage.getItem("token");
       this.$http
-        .get("https://bitcoin-testnet.services.rehive.io/api/1/user/", {
+        .get(globals.BITCOIN_API.BASE_URL + globals.BITCOIN_API.URLS.USER, {
           headers: { Authorization: token }
         })
         .then(
@@ -66,7 +68,7 @@ export default {
           }
         );
       this.$http
-        .get("https://stellar.services.rehive.io/api/1/user/account/", {
+        .get(globals.STELLAR_API.BASE_URL + globals.STELLAR_API.URLS.USER, {
           headers: { Authorization: token }
         })
         .then(

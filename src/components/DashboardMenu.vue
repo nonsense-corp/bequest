@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     full_name () {
-      return this.$store.state.user.user.first_name + ' ' + this.$store.state.user.user.last_name
+      return this.$store.state.user.first_name + ' ' + this.$store.state.user.last_name
     }
   }
 }

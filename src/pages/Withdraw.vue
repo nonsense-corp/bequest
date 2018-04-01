@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import globals from "../globals";
+
 export default {
   name: "Withdraw",
   data() {
@@ -50,7 +52,7 @@ export default {
       const token = "Token " + localStorage.getItem("token")
       this.$http
         .post(
-            "https://bitcoin-testnet.services.rehive.io/api/1/wallet/send/", 
+            globals.BITCOIN_API.BASE_URL + globals.BITCOIN_API.URLS.WALLET_SEND, 
             JSON.stringify(this.withdraw_bitcoin),
             {headers: {"Authorization": token}}
         )

@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import globals from "../globals";
+
 export default {
   name: "Tips",
   data() {
@@ -41,7 +43,7 @@ export default {
     getTransactions: function() {
       const token = "Token " + localStorage.getItem("token")
       this.$http
-        .get("https://api.rehive.com/3/transactions/", {headers: {"Authorization": token}})
+        .get(globals.REHIVE_API.BASE_URL + globals.REHIVE_API.URLS.TRANSACTIONS, {headers: {"Authorization": token}})
         .then(
           response => {
             console.log("response is", response)

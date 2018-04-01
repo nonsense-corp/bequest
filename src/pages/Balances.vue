@@ -22,6 +22,7 @@
 <script>
 
 import store from "../store";
+import globals from "../globals";
 
 export default {
   name: "Qr",
@@ -41,7 +42,7 @@ export default {
       )}`;
       const token = "Token " + localStorage.getItem("token")
       this.$http
-        .get("https://api.rehive.com/3/accounts/", {headers: {"Authorization": token}})
+        .get(globals.REHIVE_API.BASE_URL + globals.REHIVE_API.URLS.ACCOUNTS, {headers: {"Authorization": token}})
         .then(
           response => {
             // this.$router.push('/login')

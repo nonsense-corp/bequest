@@ -49,6 +49,7 @@
 
 <script>
 import store from "../store";
+import globals from "../globals";
 
 export default {
   name: "Register",
@@ -79,21 +80,21 @@ export default {
       };
       this.$http
         .post(
-          "https://api.rehive.com/3/auth/register/",
+          globals.REHIVE_API.BASE_URL + globals.REHIVE_API.URLS.REGISTER,
           JSON.stringify(payload)
         )
         .then(
           response => {
             localStorage.setItem("token", response.body.data.token);
             store.commit("changeLoggedIn", true);
-            store.commit("setUserDetails", response.body.data);
+            store.commit("setUserDetails", response.body.data.user);
             const payload_1 = {
               username: this.stellar.username,
              };
             const token = "Token " + localStorage.getItem("token");
             this.$http
                 .post(
-                  "https://stellar.services.rehive.io/api/1/user/username/set/",
+                  globals.STELLAR_API.BASE_URL + globals.STELLAR_API.URLS.USERNAME,
                   JSON.stringify(payload_1),
                   { headers: { Authorization: token }}
                 )
