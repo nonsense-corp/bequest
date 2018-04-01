@@ -16,7 +16,7 @@ const r = new Router({
     {
       path: "/",
       name: "Home",
-      component: Home
+      component: Balances
     },
     {
       path: "/register",
