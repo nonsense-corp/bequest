@@ -16,6 +16,11 @@ export default new Vuex.Store({
       },
       setUserDetails (state, user) {
         state.user = user;
+      },
+      logout (state) {
+        state.user = {};
+        state.isLoggedIn = false;
+        localStorage.clear();
       }
     }
 })
