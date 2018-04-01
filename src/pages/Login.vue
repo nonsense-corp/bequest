@@ -1,23 +1,25 @@
 <template>
-  <div>
-      <h1>Login</h1>
-        <div>
-            <form v-on:submit.prevent="loginFunction">
-                <div class="group">      
-                  <input type="text" required v-model="login.user">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>User:</label>
-                </div>
-                <div class="group">      
-                  <input type='password' required v-model="login.password">
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Password:</label>
-                </div>
-                <input type='submit' value='Login'/>
-            </form>
+  <div class="login__content">
+    <h1 class="logo login__logo">Bequest</h1>
+    <form v-on:submit.prevent="loginFunction">
+      <div class="group">      
+        <input type="text" required v-model="login.user">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>EMAIL</label>
       </div>
+      <div class="group">      
+        <input type='password' required v-model="login.password">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>PASSWORD</label>
+      </div>
+
+      <div class="login__btn-wrapper">
+        <router-link to="/register" class="btn" tag="button">Register</router-link>
+        <button type='submit' class="btn btn--primary">Login</button>
+      </div>
+    </form>
   </div>
 </template>
 

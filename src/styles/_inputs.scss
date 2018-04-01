@@ -1,13 +1,13 @@
 // See: https://codepen.io/sevilayha/pen/IdGKH
 .group {
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  width: 320px;
   border: none;
   border-bottom: 1px solid #757575;
 }
@@ -16,12 +16,14 @@ input:focus {
 }
 /* LABEL ======================================= */
 label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
+  color: #202E37;
+  font-size: 14px;
+  font-family: $hind;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   position: absolute;
   pointer-events: none;
-  left: 5px;
+  left: 15px;
   top: 10px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -33,14 +35,14 @@ input:focus ~ label,
 input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: #5264ae;
+  color: $primary-color;
 }
 
 /* BOTTOM BARS ================================= */
 .bar {
   position: relative;
   display: block;
-  width: 315px;
+  width: 335px;
 }
 .bar:before,
 .bar:after {
@@ -49,7 +51,7 @@ input:valid ~ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #5264ae;
+  background: #70B0B6;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -113,3 +115,31 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
+
+
+// START Buttons
+.btn {
+  background-color: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: $hind;
+  letter-spacing: 0.1rem;
+  border-radius: 20px;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &--primary {
+    color: #202E37;
+    background-color: $primary-color;
+  }
+}
+// END Buttons

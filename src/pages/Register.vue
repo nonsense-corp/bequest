@@ -1,44 +1,47 @@
 <template>
-  <div>
-      <h1>Register</h1>
+  <div class="login__content">
       <div>
-        <form v-on:submit.prevent="registerUser" class="mui-form">
-            <label>
-              First Name:
-              <div class="mui-textfield">
-                <input type='text' v-model="register.first_name"/>
-              </div>
-            </label>
+        <h1 class="logo login__logo">Bequest</h1>
+        <form v-on:submit.prevent="registerUser">
+            <div class="group">      
+              <input type="text" required v-model="register.first_name">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>FIRST NAME</label>
+            </div>
 
-            <label>
-              Last Name: 
-              <div class="mui-textfield">
-                <input type='text' v-model="register.last_name"/>
-              </div>
-            </label>
+            <div class="group">      
+              <input type="text" required v-model="register.last_name">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>LAST NAME</label>
+            </div>
 
-            <label>
-              Email address:
-              <div class="mui-textfield">
-                <input type='text' v-model="register.email"/>
-              </div>
-            </label>
+            <div class="group">      
+              <input type="text" required v-model="register.email">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>EMAIL</label>
+            </div>
 
-            <label>
-              Username:
-              <div class="mui-textfield">
-                <input type='text' v-model="stellar.username"/>
-              </div>
-            </label>
+            <div class="group">      
+              <input type="text" required v-model="stellar.username">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>USERNAME</label>
+            </div>       
 
-            <label>
-              Password:
-              <div class="mui-textfield">
-                <input type='password' v-model="register.password"/>
-              </div>
-            </label>
-            <br/>
-            <input type='submit' value='Register' class="mui-btn mui-btn--raised mui-btn--primary"/>
+            <div class="group">      
+              <input type="password" required v-model="register.password">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>PASSWORD</label>
+            </div>
+
+            <div class="login__btn-wrapper">
+              <router-link to="/login" class="btn" tag="button">Login</router-link>
+              <button type="submit" class="btn btn--primary">Register</button>
+            </div>
         </form>
       </div>
   </div>

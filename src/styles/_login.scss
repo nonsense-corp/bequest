@@ -1,0 +1,22 @@
+.login {
+    background-color: $background-color;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    min-height: 100vh;
+
+    &__content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__logo {
+        margin-bottom: 25px !important;
+    }
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+}
