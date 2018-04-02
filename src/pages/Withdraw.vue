@@ -146,7 +146,8 @@ export default {
 
 <style scoped>
     .content {
-        grid-template-columns: 1fr;        
+        grid-template-columns: 1fr;
+        padding-right: 0;
     }
 
     h2 {

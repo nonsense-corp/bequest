@@ -1,6 +1,5 @@
 <template>
-  <div>
-      <h1>Tips</h1>
+  <div class="content">
 
       <div v-if="loading">
         <div class="preloader">
@@ -8,20 +7,39 @@
         </div>
       </div>
 
-      <table class="mui-table">
-          <tbody>
-          <div v-for="(transaction, key, index) in transactions" :key="index">
-                <tr>
-                  <td>{{transaction.currency.symbol}}</td>
-                  <td>{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</td>
-                  <td><template v-if="transaction.metadata && transaction.metadata.hash">
-                <a :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}}</a>
-              </template></td>
-                  <td>{{transaction.status}}</td>
-                </tr> 
+      <div class="tips__table">
+        <div class="tips__row" v-for="(transaction, key, index) in transactions" :key="index">
+          <div class="tips__column">{{transaction.currency.symbol}}</div>
+          <div class="tips__column">{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</div>
+          <div class="tips__column tips__column--hash">
+            <template v-if="transaction.metadata && transaction.metadata.hash">
+              <a class="tips__table-hash"
+                :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}}</a>
+            </template>
           </div>
+          <div class="tips__column" style="align-self:center">
+            <div class="tips__button" :class="'tips__button--'+transaction.status">
+               {{transaction.status}}
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <!-- <table class="tips__table">
+          <tbody>
+            <tr v-for="(transaction, key, index) in transactions" :key="index">
+              <td style="width:23%">{{transaction.currency.symbol}}</td>
+              <td style="width:23%">{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</td>
+              <td style="width:31%">
+                <template v-if="transaction.metadata && transaction.metadata.hash">
+                  <a class="tips__table-hash"
+                    :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}}</a>
+                </template>
+              </td>
+              <td style="width:23%">{{transaction.status}}</td>
+            </tr> 
         </tbody>
-      </table>
+      </table> -->
   </div>
 </template>
 
@@ -59,3 +77,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .content {
+    grid-template-columns: 1fr;
+  }
+</style>
