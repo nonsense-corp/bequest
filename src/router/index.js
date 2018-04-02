@@ -47,8 +47,14 @@ const r = new Router({
       secure: true
     },
     {
-      path: "/withdraw",
+      path: "/withdraw/",
       name: "Withdraw",
+      component: Withdraw,
+      secure: true
+    },
+    {
+      path: "/withdraw/:currency",
+      name: "WithdrawCurrency",
       component: Withdraw,
       secure: true
     }

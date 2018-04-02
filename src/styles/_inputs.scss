@@ -141,5 +141,10 @@ input:focus ~ .highlight {
     color: #202E37;
     background-color: $primary-color;
   }
+  &--secondary {
+    color: #fff;
+    background-color: $background-color;
+    border: none;
+  }
 }
 // END Buttons
