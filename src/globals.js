@@ -17,7 +17,7 @@ const globals = {
         }
     },
     STELLAR_API: {
-        BASE_URL: "https://stellar.services.rehive.io/api/1/user/",
+        BASE_URL: "https://stellar.services.rehive.io/api/1/",
         BLOCK_EXPLORER_URL: "",
         URLS: {
             USER: "account/",
