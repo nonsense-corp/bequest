@@ -62,7 +62,7 @@
                     <span class="bar"></span>
                     <label>AMOUNT</label>
                 </div>
-                <h2>Enter a Lumens Address</h2>
+                <h2>Enter a Stellar Address</h2>
                 <div class="group">      
                     <input type='text' required v-model="withdraw_bitcoin.to_reference">
                     <span class="highlight"></span>
@@ -165,7 +165,7 @@ export default {
     }
 
     .currency-select {
-        border: 2px solid #202E37;
+        /* border: 2px solid #202E37; */
         color: #202E37;
         cursor: pointer;
         display: inline-block;
@@ -178,6 +178,43 @@ export default {
         text-align: center;
         text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
         width: 120px;
+        box-shadow: inset 0 0 0 2px  #202E37;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .currency-select::before,
+    .currency-select::after {
+        box-sizing: inherit;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+    }
+
+    .currency-select::before {
+        border-top: 2px solid #75B9BE;
+        border-bottom: 2px solid #75B9BE;
+        transform: scale3d(0,1,1);
+    }
+
+    .currency-select::after {
+        border-left: 2px solid #75B9BE;
+        border-right: 2px solid #75B9BE;
+        transform: scale3d(1,0,1);
+    }
+
+    .currency-select:hover {
+        color: #75B9BE;
+    }
+
+    .currency-select:hover::before,
+    .currency-select:hover::after {
+        transform: scale3d(1,1,1);
+        transition: transform 0.3s;
     }
 
     .currency-select--active {
