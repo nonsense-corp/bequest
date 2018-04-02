@@ -1,0 +1,53 @@
+.tips {
+    &__table-hash {
+        color: inherit;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr 1fr;
+        justify-content: center;
+        align-content: center;
+        background-color: rgb(32, 46, 55);
+        color: #E2F0F1;
+        font-weight: 300;
+        height: 80px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        &:nth-child(odd) {
+            background-color: rgba(117, 185, 190, 0.15);
+            color: #000;
+            text-shadow: 0 0 0 transparent;
+        }
+    }
+
+    &__column {
+        font-size: 32px;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        &--hash {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__button {
+        color: #fff;
+        background-color: $complete;
+        border-radius: 20px;
+        font-size: 14px;
+        text-transform: uppercase;
+        height: 35px;
+        width: 115px;
+        line-height: 37px;
+        &--Failed {
+            background-color: #E07070;
+        }
+        &--Pending {
+            background-color: $pending;
+        }
+    }
+}
