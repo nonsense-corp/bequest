@@ -1,29 +1,42 @@
 <template>
-  <div>
-      <h1>Embed codes</h1>
-
+  <div class='content'>
       <div v-if="loading">
         <div class="preloader">
           <div class="loader"></div>
         </div>
       </div>
 
-      <div v-if="!loading">  
+      <div class="embed" v-if="!loading">  
         <h2>Bitcoin</h2>
-        <div v-if="qrCode_Bitcoin">
+        <div class="embed__details" v-if="qrCode_Bitcoin">
           <img :src="qrCode_Bitcoin" />
-          <br/>
-          <b>Image Tag:</b> &lt;img src="{{ qrCode_Bitcoin }}" /&gt;
+          <div class="embed__box">
+            <p>
+              <b>Address:</b> {{ address_Bitcoin }}
+            </p>
+            <br>
+            <div class="image_embed">
+              &lt;img src="{{ qrCode_Bitcoin }}" /&gt;
+            </div>
+          </div>
         </div>
       </div>
-      <div v-if="!loading">  
+      <div class="embed" v-if="!loading">  
         <h2>Stellar</h2>
-        <div v-if="qrCode_Stellar">
+        <div class="embed__details" v-if="qrCode_Stellar">
           <img :src="qrCode_Stellar" />
-          <br/>
-          <b>Image Tag:</b> &lt;img src="{{ qrCode_Stellar }}" /&gt;
-          <br/>
-          <b>Memo: {{memo_Stellar}}</b> 
+          <div class="embed__box">
+            <p>
+              <b>Address:</b> {{ address_Stellar }}
+            </p>
+            <p>
+              <b>Memo</b>: {{memo_Stellar}}
+            </p>
+            <br>
+            <div class="image_embed">
+             &lt;img src="{{ qrCode_Stellar }}" /&gt;
+            </div>
+          </div>
         </div>
       </div>
   </div>
@@ -57,8 +70,7 @@ export default {
         })
         .then(
           response => {
-            // this.$router.push('/login')
-            console.log("response is", response);
+            this.address_Bitcoin = response.body.account_id;
             this.qrCode_Bitcoin = response.body.details.qr_code;
             this.loading = false;
           },
@@ -73,12 +85,9 @@ export default {
         })
         .then(
           response => {
-            // this.$router.push('/login')
-            console.log("response is", response);
-            // this.qrCode_Stellar = response.body.details.qr_code;
             this.address_Stellar = response.body.details.address;
             this.memo_Stellar = response.body.details.memo;
-            this.qrCode_Stellar = "https://chart.googleapis.com/chart?choe=UTF-8&chs=300&chl=bitcoin%3A" + this.address_Stellar + "&cht=qr"
+            this.qrCode_Stellar = "https://chart.googleapis.com/chart?choe=UTF-8&chs=300&chl=stellar%3A" + this.address_Stellar + "&cht=qr"
             this.loading = false;
           },
           err => {
@@ -90,3 +99,69 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .content {
+    grid-gap: 20px;
+  }
+
+  .embed {
+    grid-column: span 2;
+    background-color: #202E37;
+    color: #E2F0F1;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 100;
+    font-size: 48px;
+    margin: 0;
+  }
+
+  .embed__details {
+    background-color: #EAF5F5;
+    color: #000;
+    width: 100%;
+    line-height: 1;
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+    height: 315px;
+    text-align: left;
+  }
+
+  .preloader {
+    grid-column: span 2;
+  }
+
+  .embed__box {
+    float: left;
+    text-transform: none;
+    width: 65%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  .image_embed {
+    background-color: #F7FCFC;
+    font-weight: 600;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+    float: left;
+    margin-left: 15px;
+  }
+</style>
