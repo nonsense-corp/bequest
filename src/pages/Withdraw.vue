@@ -35,7 +35,10 @@
                     <label>ADDRESS</label>
                 </div>
                 <div class="button-wrapper">
-                    <button type="submit" class="btn btn--secondary">WITHDRAW</button>
+                    <button type="submit" class="btn btn--secondary">
+                        WITHDRAW
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
                 </div>
             </form>
         </div>
@@ -67,7 +70,10 @@
                     <label>ADDRESS</label>
                 </div>
                 <div class="button-wrapper">
-                    <button type="submit" class="btn btn--secondary">WITHDRAW</button>
+                    <button type="submit" class="btn btn--secondary">
+                        WITHDRAW
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
                 </div>
             </form>
         </div>
@@ -150,6 +156,13 @@ export default {
         font-size: 24px;
     }
 
+    .currency-wrapper {
+        border-bottom: 1px solid rgba(117, 185, 190, 0.2);
+        margin-top: 30px;
+        padding-bottom: 70px;
+        padding-left: 30px;
+    }
+
     .currency-select {
         border: 2px solid #202E37;
         color: #202E37;
@@ -174,6 +187,8 @@ export default {
     .form-wrapper {
         display: grid;
         justify-content: left;
+        margin-top: 30px;
+        padding-left: 30px;
     }
 
     .button-wrapper {

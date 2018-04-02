@@ -16,8 +16,14 @@
       </div>
 
       <div class="login__btn-wrapper">
-        <router-link to="/register" class="btn" tag="button">Register</router-link>
-        <button type='submit' class="btn btn--primary">Login</button>
+        <router-link to="/register" class="btn" tag="button">
+          Register
+          <i class="fas fa-edit"></i>
+        </router-link>
+        <button type='submit' class="btn btn--primary">
+          Login
+          <i class="fas fa-arrow-circle-right"></i>
+        </button>
       </div>
     </form>
   </div>

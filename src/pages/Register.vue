@@ -39,8 +39,14 @@
             </div>
 
             <div class="login__btn-wrapper">
-              <router-link to="/login" class="btn" tag="button">Login</router-link>
-              <button type="submit" class="btn btn--primary">Register</button>
+              <router-link to="/login" class="btn" tag="button">
+                Login
+                <i class="fas fa-edit"></i>
+              </router-link>
+              <button type="submit" class="btn btn--primary">
+                Register
+                <i class="fas fa-arrow-circle-right"></i>
+              </button>
             </div>
         </form>
       </div>
