@@ -166,6 +166,7 @@ export default {
 
     .currency-select {
         /* border: 2px solid #202E37; */
+        box-sizing: border-box;
         color: #202E37;
         cursor: pointer;
         display: inline-block;
