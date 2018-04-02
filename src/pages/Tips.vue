@@ -9,7 +9,7 @@
 
       <div class="tips__table">
         <div class="tips__row" v-for="(transaction, key, index) in transactions" :key="index">
-          <div class="tips__column">{{transaction.currency.symbol}}</div>
+          <div class="tips__column">{{transaction.currency.code}}</div>
           <div class="tips__column">{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</div>
           <div class="tips__column tips__column--hash">
             <template v-if="transaction.metadata && transaction.metadata.hash">
@@ -24,22 +24,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <table class="tips__table">
-          <tbody>
-            <tr v-for="(transaction, key, index) in transactions" :key="index">
-              <td style="width:23%">{{transaction.currency.symbol}}</td>
-              <td style="width:23%">{{ transaction.amount / (10 ** transaction.currency.divisibility)}}</td>
-              <td style="width:31%">
-                <template v-if="transaction.metadata && transaction.metadata.hash">
-                  <a class="tips__table-hash"
-                    :href="`https://bitcoin-node-testnet.rehive.io/tx/${transaction.metadata.hash}`">{{transaction.metadata.hash}}</a>
-                </template>
-              </td>
-              <td style="width:23%">{{transaction.status}}</td>
-            </tr> 
-        </tbody>
-      </table> -->
   </div>
 </template>
 
