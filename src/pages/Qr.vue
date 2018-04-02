@@ -103,6 +103,7 @@ export default {
 <style scoped>
   .content {
     grid-gap: 20px;
+    grid-template-columns: 1fr;
   }
 
   .embed {
