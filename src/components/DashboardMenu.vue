@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- Logo -->
-      <h1 class="logo">Bequest</h1>
+      <h1 class="logo">Bistow</h1>
 
       <!-- Avatar -->
       <div class="sidebar__profile">

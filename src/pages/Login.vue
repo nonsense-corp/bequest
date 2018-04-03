@@ -1,6 +1,6 @@
 <template>
   <div class="login__content">
-    <h1 class="logo login__logo">Bequest</h1>
+    <h1 class="logo login__logo">Bistow</h1>
     <form v-on:submit.prevent="loginFunction">
       <div class="group">      
         <input type="text" required v-model="login.user">
