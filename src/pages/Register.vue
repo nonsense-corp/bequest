@@ -1,7 +1,7 @@
 <template>
   <div class="login__content">
       <div>
-        <h1 class="logo login__logo">Bequest</h1>
+        <h1 class="logo login__logo">Bistow</h1>
         <form v-on:submit.prevent="registerUser">
             <div class="group">      
               <input type="text" required v-model="register.first_name">
