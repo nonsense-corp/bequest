@@ -22,7 +22,7 @@
             <form v-on:submit.prevent="withdrawBitcoin">
                 <h2>Enter an amount in Bitcoin</h2>
                 <div class="group">      
-                    <input type='number' required v-model="withdraw_bitcoin.amount">
+                    <input type='number' step="any" required v-model="withdraw_bitcoin.amount">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>AMOUNT</label>
@@ -54,20 +54,26 @@
     <!-- START Lumens -->
     <div v-if="$route.params.currency == 'lumens'">
         <div v-if="!complete_bitcoin" class="form-wrapper">
-            <form v-on:submit.prevent="withdrawBitcoin">
+            <form v-on:submit.prevent="widthdrawLumens">
                 <h2>Enter an amount in Lumens</h2>
                 <div class="group">      
-                    <input type='number' required v-model="withdraw_bitcoin.amount">
+                    <input type='number' step="any"required v-model="withdraw_lumens.amount">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>AMOUNT</label>
                 </div>
                 <h2>Enter a Stellar Address</h2>
                 <div class="group">      
-                    <input type='text' required v-model="withdraw_bitcoin.to_reference">
+                    <input type='text' required v-model="withdraw_lumens.reference">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>ADDRESS</label>
+                </div>
+                <div class="group">      
+                    <input type='text' required v-model="withdraw_lumens.memo">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>MEMO</label>
                 </div>
                 <div class="button-wrapper">
                     <button type="submit" class="btn btn--secondary">
@@ -81,6 +87,12 @@
             Successful Withdrawel
         </div>
         <div v-if="bitcoin_error">
+            An error occured: {{bitcoin_error_msg}}
+        </div>
+        <div v-if="complete_lumens">
+            Successful Withdrawel
+        </div>
+        <div v-if="lumens_error">
             An error occured: {{lumens_error_msg}}
         </div>
     </div>
@@ -104,8 +116,9 @@ export default {
         bitcoin_error: false,
         bitcoin_error_msg: "",
         withdraw_lumens: {
-            to_reference: "",
+            reference: "",
             amount: "",
+            memo: "",
         },
         complete_lumens: false,
         lumens_error: false,
@@ -126,7 +139,6 @@ export default {
         )
         .then(
           response => {
-            // this.$router.push('/login')
             console.log("response is", response);
             this.complete_bitcoin = true;
           },
@@ -138,7 +150,27 @@ export default {
         );
     },
     widthdrawLumens: function () {
-        // TODO: Lumen withdraw logic here.
+        this.$http.headers.common.Authorization = `Token ${localStorage.getItem(
+            "token"
+        )}`;
+        const token = "Token " + localStorage.getItem("token")
+        this.$http
+        .post(
+            globals.STELLAR_API.BASE_URL + globals.STELLAR_API.URLS.WALLET_SEND, 
+            JSON.stringify(this.withdraw_lumens),
+            {headers: {"Authorization": token}}
+        )
+        .then(
+            response => {
+            console.log("response is", response);
+            this.complete_lumens = true;
+            },
+            err => {
+            console.log("An error occured", err);
+            this.lumens_error = err;
+            this.lumens_error = true;
+            }
+        );
     },
   }
 };
