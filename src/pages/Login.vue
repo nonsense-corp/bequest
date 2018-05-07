@@ -40,7 +40,7 @@ export default {
       login: {
         user: "",
         password: "",
-        company: "crypto_tipper"
+        company: "bistow"
       }
     };
   },

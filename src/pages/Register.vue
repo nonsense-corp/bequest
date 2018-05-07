@@ -82,7 +82,7 @@ export default {
         email: this.register.email,
         password1: this.register.password,
         password2: this.register.password,
-        company: "crypto_tipper"
+        company: "bistow"
       };
       this.$http
         .post(
