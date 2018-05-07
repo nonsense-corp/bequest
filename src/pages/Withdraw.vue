@@ -3,11 +3,11 @@
     <div class="currency-wrapper">
         <h2>Pick your currency to withdraw</h2>
         <div>
-            <router-link to="/withdraw/bitcoin" tag="div" class="currency-select"
+            <!-- <router-link to="/withdraw/bitcoin" tag="div" class="currency-select"
                 v-bind:class="{'currency-select--active' : !$route.params.currency || $route.params.currency == 'bitcoin'}"
             >
                 XBT
-            </router-link>
+            </router-link> -->
             <router-link to="/withdraw/lumens" tag="div" class="currency-select"
                 v-bind:class="{'currency-select--active' : $route.params.currency == 'lumens'}"
             >
@@ -17,7 +17,7 @@
     </div>
 
     <!-- START Bitcoin -->
-      <div v-if="!$route.params.currency || $route.params.currency == 'bitcoin'">
+      <!-- <div v-if="!$route.params.currency || $route.params.currency == 'bitcoin'">
         <div v-if="!complete_bitcoin" class="form-wrapper">
             <form v-on:submit.prevent="withdrawBitcoin">
                 <h2>Enter an amount in Bitcoin</h2>
@@ -48,7 +48,7 @@
         <div v-if="bitcoin_error">
             An error occured: {{bitcoin_error_msg}}
         </div>
-      </div>
+      </div> -->
     <!-- END Bitcoin -->
 
     <!-- START Lumens -->
