@@ -6,7 +6,7 @@
         </div>
       </div>
 
-      <div class="embed" v-if="!loading">  
+      <!-- <div class="embed" v-if="!loading">  
         <h2>Bitcoin</h2>
         <div class="embed__details" v-if="qrCode_Bitcoin">
           <img :src="qrCode_Bitcoin" />
@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="embed" v-if="!loading">  
         <h2>Stellar</h2>
         <div class="embed__details" v-if="qrCode_Stellar">
@@ -49,13 +49,11 @@ export default {
   name: "Qr",
   data() {
     return {
-      qrCode_Bitcoin: "",
       qrCode_Stellar: "",
       loading: true
     };
   },
   created() {
-    console.log("hello");
     this.getQrCode();
   },
   methods: {
@@ -64,21 +62,21 @@ export default {
         "token"
       )}`;
       const token = "Token " + localStorage.getItem("token");
-      this.$http
-        .get(globals.BITCOIN_API.BASE_URL + globals.BITCOIN_API.URLS.USER, {
-          headers: { Authorization: token }
-        })
-        .then(
-          response => {
-            this.address_Bitcoin = response.body.account_id;
-            this.qrCode_Bitcoin = response.body.details.qr_code;
-            this.loading = false;
-          },
-          err => {
-            console.log("An error occured", err);
-            this.loading = false;
-          }
-        );
+      // this.$http
+      //   .get(globals.BITCOIN_API.BASE_URL + globals.BITCOIN_API.URLS.USER, {
+      //     headers: { Authorization: token }
+      //   })
+      //   .then(
+      //     response => {
+      //       this.address_Bitcoin = response.body.account_id;
+      //       this.qrCode_Bitcoin = response.body.details.qr_code;
+      //       this.loading = false;
+      //     },
+      //     err => {
+      //       console.log("An error occured", err);
+      //       this.loading = false;
+      //     }
+      //   );
       this.$http
         .get(globals.STELLAR_API.BASE_URL + globals.STELLAR_API.URLS.USER, {
           headers: { Authorization: token }
