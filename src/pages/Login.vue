@@ -3,13 +3,21 @@
     <h1 class="logo login__logo">Bistow</h1>
     <form v-on:submit.prevent="loginFunction">
       <div class="group">      
-        <input type="text" required v-model="login.user">
+        <input type="text" 
+          required v-model="login.user"
+          v-on:blur="$v.login.user.$touch"
+          v-bind:class="{error: $v.login.user.$error}"
+        >
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>EMAIL</label>
       </div>
       <div class="group">      
-        <input type='password' required v-model="login.password">
+        <input type='password' 
+          required v-model="login.password"
+          v-on:blur="$v.login.password.$touch"
+          v-bind:class="{error: $v.login.password.$error}"
+        >
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>PASSWORD</label>
@@ -20,7 +28,7 @@
           Register
           <i class="fas fa-edit"></i>
         </router-link>
-        <button type='submit' class="btn btn--primary">
+        <button type='submit' class="btn btn--primary" :disabled="login.loading || $v.$invalid">
           Login
           <i class="fas fa-arrow-circle-right"></i>
         </button>
@@ -32,6 +40,7 @@
 <script>
 import store from "../store";
 import globals from "../globals";
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
   name: "Login",
@@ -40,12 +49,14 @@ export default {
       login: {
         user: "",
         password: "",
-        company: "bistow"
+        company: "bistow",
+        loading: false
       }
     };
   },
   methods: {
     loginFunction: function(event) {
+      this.login.loading = true;
       event.preventDefault();
       this.$http
         .post(
@@ -58,9 +69,15 @@ export default {
             store.commit("changeLoggedIn", true);
             store.commit("setUserDetails", response.body.data.user);
             this.$router.push("/balances");
+            this.login.loading = false;
           },
           err => {
-            console.log("An error occured", err);
+            this.$swal({
+              type: 'error',
+              title: 'Oops...',
+              text: err.body.message,
+            });
+            this.login.loading = false;
           }
         );
     },
@@ -69,6 +86,17 @@ export default {
         return "true";
       }
       return "false";
+    }
+  },
+  validations: {
+    login: {
+      user: {
+        email,
+        required
+      },
+      password: {
+        required
+      }
     }
   }
 };

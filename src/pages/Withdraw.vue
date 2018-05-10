@@ -57,7 +57,7 @@
             <form v-on:submit.prevent="widthdrawLumens">
                 <h2>Enter an amount in Lumens</h2>
                 <div class="group">      
-                    <input type='number' step="any"required v-model="withdraw_lumens.amount">
+                    <input type='number' step="any" required v-model="withdraw_lumens.amount">
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>AMOUNT</label>

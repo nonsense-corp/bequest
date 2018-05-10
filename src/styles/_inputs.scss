@@ -116,6 +116,20 @@ input:focus ~ .highlight {
   }
 }
 
+// Input validation
+input.error {
+  &~label {
+    color: $alert-error;
+  }
+  &~.bar:before
+  {
+    background: $alert-error;
+  }
+  &~.bar:after {
+    background: $alert-error;
+  }
+}
+
 
 // START Buttons
 .btn {
@@ -228,5 +242,8 @@ input:focus ~ .highlight {
     background-color: $background-color;
     border: none;
   }
+}
+button:disabled {
+  opacity: 0.2;
 }
 // END Buttons
